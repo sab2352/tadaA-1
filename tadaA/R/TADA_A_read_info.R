@@ -167,7 +167,7 @@ TADA_A_read_info <- function(mut_files,
     for(j in 1:length(mutrate_ref_files)){
       command <- paste("bigWigAverageOverBed ",
                        mutrate_ref_files[j], " ", paste(prefix, 
-                                                        "_temp_for_mutrate.bed", sep = ""), " ", 
+                                                        "_temp_for_mutrate.bed.mutrate.txt", sep = ""), " ", 
                        paste(prefix, "_temp_for_mutrate.bed.mutrate.txt", sep = "" ), sep = "")
       system(command)
 
