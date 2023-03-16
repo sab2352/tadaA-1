@@ -168,12 +168,12 @@ TADA_A_read_info <- function(mut_files,
       command <- paste("bigWigAverageOverBed ",
                        mutrate_ref_files[j], " ", paste(prefix, 
                                                         "_temp_for_mutrate.bed", sep = ""), " ", 
-                       paste(prefix, "_temp_for_mutrate.bed.mutrate.txtttt", sep = "" ), sep = "")
+                       paste(prefix, "_temp_for_mutrate.bed.mutrate.txt", sep = "" ), sep = "")
       system(command)
 
       #######################  
         
-      command <- paste("awk {'print $1\"\t\"$4'} ", paste(prefix, "_temp_for_mutrate.bed.mutrate", sep = ""), " > ", paste(prefix, "_temp_for_mutrate.bed.mutrate.txt", sep = ""), sep = "")
+      command <- paste("awk {'print $1\"\t\"$4'} ", paste(prefix, "_temp_for_mutrate.bed", sep = ""), " > ", paste(prefix, "_temp_for_mutrate.bed.mutrate.txt", sep = ""), sep = "")
       system(command)
       coverage_noncoding_base_mutrate <-fread(paste(prefix, "_temp_for_mutrate.bed.mutrate.txt", sep = ""), header = FALSE, stringsAsFactors = FALSE, sep = "\t")
       colnames(coverage_noncoding_base_mutrate) <- c("base_ID",paste("base_mutrate_alt_", alt_letters[j], sep = ""))
