@@ -46,7 +46,7 @@ TADA_A_read_info <- function(mut_files,
   # less than the number of windows in [windows] because there are
   # a few windows with mutration rate equal to 0, and thus removed.
   for(i in 1:length(mut_files)){
-    mutrate_scaling <- fread(mutrate_scaling_files[i], header = TRUE, sep = "\t", stringsAsFactors = FALSE)
+    mutrate_scaling <- fread(paste0(mutrate_scaling_files[i],".txt"), header = TRUE, sep = "\t", stringsAsFactors = FALSE)
     #system(paste("echo \"Finished reading in mutrate scaling file ", mutrate_scaling_files[i], ".\"", sep = ""))
     #system("date")
     print(paste0("Read in mutrate scaling file ", mutrate_scaling_files[i]))
